@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creator</title>
+    <!-- Шрифты для игровой и современной атмосферы -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css/style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>создание персонажа</h2>
+        
+        <form id="characterForm">
+            <div class="form-grid">
+                <!-- Блок имени -->
+                <div class="form-group full-width">
+                    <label for="charName">Character Name</label>
+                    <input type="text" id="charName" name="name" placeholder="Enter hero name..." required>
+                </div>
+
+                <!-- Раса и Класс -->
+                <div class="form-group">
+                    <label for="charRace">Race</label>
+                    <input type="text" id="charRace" name="race" placeholder="e.g. Elf, Human" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="charClass">Class</label>
+                    <input type="text" id="charClass" name="characterClass" placeholder="e.g. Mage, Warrior" required>
+                </div>
+
+                <!-- Уровень -->
+                <div class="form-group short">
+                    <label for="charLvl">Level</label>
+                    <input type="number" id="charLvl" name="lvl" value="1" min="1" max="100" required>
+                </div>
+
+                <!-- Навыки (Правильная система тегов) -->
+                <div class="form-group full-width">
+                    <label>Skills</label>
+                    <div class="tags-input-container" id="tagsContainer">
+                        <div class="tags-wrapper" id="tagsWrapper">
+                            <!-- Сюда JS добавляет теги -->
+                        </div>
+                        <div class="input-with-btn">
+                            <input type="text" id="charSkills" placeholder="e.g. Fireball, Stealth (Press Enter or click Add)">
+                            <input type="button" id="addSkillBtn" value="Add">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Описание -->
+                <div class="form-group full-width">
+                    <label for="description">Biography & Description</label>
+                    <textarea name="description" id="description" rows="4" placeholder="Write your character's story..."></textarea>
+                </div>
+            </div>
+
+            <!-- Главная кнопка -->
+            <button type="submit" class="submit-btn">Create Character</button>
+        </form>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

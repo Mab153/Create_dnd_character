@@ -29,7 +29,6 @@ class Heroes:
 class Hero:
     hero_db = Heroes()
     
-    # ИСПРАВЛЕНО: Для списков по умолчанию лучше использовать None, а инициализировать внутри
     def __init__(self, name: str = None, race: str = None, character_class: str = None, lvl: int = None, skills: list = None, destribition: str = None):
         self.id = self.get_id()
         self.name = name
@@ -48,8 +47,7 @@ class Hero:
         # Если база данных пустая, возвращаем ID = 1
         if not data:
             return 1
-
-        # Ваш отличный алгоритм поиска максимального ID
+        
         return max(data, key=lambda hero: hero['id'])['id'] + 1
 
     def get_json(self) -> dict:
@@ -62,15 +60,3 @@ class Hero:
             "skills": self.skills,
             "destribition": self.destribition
         }
-
-# Создаем конкретного персонажа, чтобы в базе не плодились пустые None-значения
-barbarian = Hero(
-    name="Конан",
-    race="Человек",
-    character_class="Варвар",
-    lvl=1,
-    skills=["Сильный удар"]
-)
-
-print("Создан персонаж:", barbarian.get_json())
-print("Текущая база данных:", barbarian.hero_db.get_db())

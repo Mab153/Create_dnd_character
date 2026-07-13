@@ -1,0 +1,227 @@
+/* Переменные для быстрой смены цветов */
+:root {
+    --bg-color: #0f1115;
+    --card-bg: #1a1d24;
+    --accent-color: #dfb15b; /* Золотой фэнтези акцент */
+    --accent-hover: #fcd581;
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: #2e3440;
+    --focus-border: #dfb15b;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Карточка-контейнер формы */
+.form-container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 600px;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+
+/* Сетка полей (Grid) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Размеры колонок */
+.full-width {
+    grid-column: span 2;
+}
+
+.short {
+    grid-column: span 1;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+/* Общие стили текстовых полей */
+input[type="text"],
+input[type="number"],
+textarea {
+    background-color: #111318;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input::placeholder, 
+textarea::placeholder {
+    color: #4a5568;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--focus-border);
+    box-shadow: 0 0 8px rgba(223, 177, 91, 0.2);
+}
+
+/* Контейнер динамических навыков (Тегов) */
+.tags-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #111318;
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Стиль самого тега */
+.tag {
+    background-color: rgba(223, 177, 91, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.2s ease;
+}
+
+.tag-remove {
+    cursor: pointer;
+    color: var(--text-muted);
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.tag-remove:hover {
+    color: #ef4444;
+}
+
+/* Строка ввода внутри тегов */
+.tags-input-container .input-with-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.tags-input-container .input-with-btn input[type="text"] {
+    background: transparent;
+    border: none;
+    padding: 4px 0;
+}
+
+.tags-input-container .input-with-btn input[type="text"]:focus {
+    box-shadow: none;
+}
+
+/* Вспомогательная кнопка "Add" */
+input[type="button"] {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+input[type="button"]:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Главная кнопка */
+.submit-btn {
+    background-color: var(--accent-color);
+    color: #111318;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 6px;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 500px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .full-width, .short {
+        grid-column: span 1;
+    }
+    .form-container {
+        padding: 20px;
+    }
+}
