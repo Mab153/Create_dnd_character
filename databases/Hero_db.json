@@ -1,45 +1,33 @@
 [
     {
-        "id": 0,
-        "name": "Oleg",
-        "lvl": null,
-        "skills": [],
-        "Destribtion": null
-    },
-    {
         "id": 1,
-        "name": "Oleg",
+        "name": null,
         "race": null,
-        "class": null,
+        "character_class": null,
         "lvl": null,
-        "skills": [],
-        "Destribtion": null
+        "skills": null,
+        "destribition": null
     },
     {
         "id": 2,
-        "name": "Oleg",
-        "race": null,
-        "class": null,
-        "lvl": null,
-        "skills": [],
-        "Destribtion": null
+        "name": "Конан",
+        "race": "Человек",
+        "character_class": "Варвар",
+        "lvl": 1,
+        "skills": [
+            "Сильный удар"
+        ],
+        "destribition": null
     },
     {
         "id": 3,
-        "name": "Oleg",
-        "race": null,
-        "class": null,
-        "lvl": null,
-        "skills": [],
-        "Destribtion": null
-    },
-    {
-        "id": 4,
-        "name": "Oleg",
-        "race": null,
-        "class": null,
-        "lvl": null,
-        "skills": [],
-        "Destribtion": null
+        "name": "Конан",
+        "race": "Человек",
+        "character_class": "Варвар",
+        "lvl": 1,
+        "skills": [
+            "Сильный удар"
+        ],
+        "destribition": null
     }
 ]
